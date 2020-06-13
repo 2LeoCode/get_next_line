@@ -6,7 +6,7 @@
 /*   By: lsuardi <lsuardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/05 21:59:27 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/06/10 18:26:54 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/06/11 15:12:56 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,6 @@ int		clear_buffer(t_buffer *buf)
 	}
 	buf->cur = NULL;
 	buf->last = NULL;
+	buf->init = 0;
 	return (0);
 }

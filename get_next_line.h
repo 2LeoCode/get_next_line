@@ -6,7 +6,7 @@
 /*   By: lsuardi <lsuardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/04 15:35:48 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/06/09 16:14:05 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/06/11 15:12:51 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct		s_buffer
 {
 	int				read_ret;
 	int				init;
+	int				id;
 	t_list			*all;
 	t_list			*last;
 	t_list			*cur;

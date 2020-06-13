@@ -6,7 +6,7 @@
 /*   By: lsuardi <lsuardi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/04 15:45:43 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/06/10 18:24:40 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/06/12 00:32:33 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ static int		lst_get_line(char **line, t_buffer *buf)
 		return (clear_buffer(buf));
 	buf->cur = tmp;
 	tmp->pos = (c ? (tmp->pos + 1) : &tmp->buf[ret + 1]);
+	if (!buf->id)
+		clear_buffer(buf);
 	return (1);
 }
 
@@ -115,6 +117,7 @@ int				get_next_line(int fd, char **line)
 
 	if (BUFFER_SIZE < 1 || fd < 0 || !line)
 		return (-1);
+	buf[fd].id = fd;
 	if (!buf[fd].init)
 	{
 		if ((lst_read_line(fd, &buf[fd]) < 0)
